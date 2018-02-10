@@ -1,50 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09072cc9-bf09-4b00-9acf-755da3aae800" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/contacts/edit.html.haml" />
+    <list default="true" id="09072cc9-bf09-4b00-9acf-755da3aae800" name="Default" comment="Remove models/model (wrong name generated instead of user). Fix simple form for contacts. Add navbar.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/uploaders/photo_uploader.rb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20180210103423_devise_create_users.rb" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test/models/user_test.rb" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/contacts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contacts_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/model.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/contacts/index.html.haml" afterPath="$PROJECT_DIR$/app/views/contacts/index.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/contacts/new.html.haml" afterPath="$PROJECT_DIR$/app/views/contacts/new.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/confirmation_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/email_changed.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/password_change.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/unlock_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_links.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/unlocks/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.haml" afterPath="$PROJECT_DIR$/app/views/home/index.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/confirmations/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/mailer/confirmation_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/mailer/email_changed.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/mailer/password_change.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/mailer/reset_password_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/mailer/unlock_instructions.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/passwords/edit.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/passwords/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/registrations/edit.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/registrations/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/sessions/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/shared/_links.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/unlocks/new.html.haml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180209201802_devise_create_models.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180209223037_create_contacts.rb" afterPath="$PROJECT_DIR$/db/migrate/20180209223037_create_contacts.rb" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/models.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test/models/model_test.rb" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,26 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="contacts_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/contacts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,11 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photo_uploader.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/uploaders/photo_uploader.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/fixtures/users.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/contacts/new.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -444,24 +408,31 @@
       <workItem from="1518196581941" duration="81000" />
       <workItem from="1518196824680" duration="11328000" />
       <workItem from="1518209598379" duration="11632000" />
-      <workItem from="1518253324485" duration="12456000" />
+      <workItem from="1518253324485" duration="13227000" />
     </task>
+    <task id="LOCAL-00001" summary="Remove models/model (wrong name generated instead of user). Fix simple form for contacts. Add navbar.">
+      <created>1518266796179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518266796179</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35497000" />
+    <option name="totallyTimeSpent" value="36268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="16" width="1315" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23599052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45252225" sideWeight="0.405179" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43758968" sideWeight="0.59482104" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4375" sideWeight="0.59482104" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -481,6 +452,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove models/model (wrong name generated instead of user). Fix simple form for contacts. Add navbar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove models/model (wrong name generated instead of user). Fix simple form for contacts. Add navbar." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -738,26 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/uploaders/photo_uploader.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/simple_form.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2019">
           <caret line="25" column="66" lean-forward="false" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures/users.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -850,14 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacts/edit.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -884,8 +835,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacts/new.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/photo_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures/users.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
