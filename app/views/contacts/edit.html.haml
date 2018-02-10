@@ -1,3 +1,4 @@
 %h2 Edit Contact
-
-= render :partial => "contacts/form"
+= simple_form_for @contact, html: { class: 'form-vertical' },
+  wrapper: :vertical_form, as: 'contact', url: contact_path do |form|
+  = render :partial => "contacts/form", locals: { f: form }

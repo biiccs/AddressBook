@@ -1,16 +1,16 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_contact, only: [:show, :edit, :update]
 
   def index
     @contacts = current_user.contacts
   end
 
   def show
-    @contact = current_user.contacts.find(params[:id])
   end
 
   def new
-    @contact = current_user.contacts.new()
+    @contact = current_user.contacts.new
   end
 
   def create
@@ -24,11 +24,9 @@ class ContactsController < ApplicationController
   end
 
   def edit
-    @contact = current_user.contacts.find(params[:id])
   end
 
   def update
-    @contact = current_user.contacts.find(params[:id])
     if @contact.update(contact_params)
       redirect_to(@contact)
     else
@@ -45,7 +43,12 @@ class ContactsController < ApplicationController
   end
 
   private
+
   def contact_params
-    params.require(:contact).permit(:name, :phone, :email)
+    params.require(:contact).permit(:name, :phone, :email, :photo, :photo_cache)
+  end
+
+  def set_contact
+    @contact = current_user.contacts.find(params[:id])
   end
 end

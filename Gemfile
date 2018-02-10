@@ -60,3 +60,5 @@ gem 'devise'
 gem "haml-rails", "~> 1.0"
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'file_validators'

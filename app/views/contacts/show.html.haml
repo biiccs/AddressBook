@@ -13,8 +13,10 @@
     %p
       %strong Email
       #{@contact.email}
-
-
+    %p
+      %strong Photo
+      #{@contact.photo}
+        
     = link_to contacts_path, {:class => "btn btn-default", :title => "Back"} do
       %span.glyphicon.glyphicon-menu-left{:aria-hidden => "true"}
       Back
