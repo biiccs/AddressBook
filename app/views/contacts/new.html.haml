@@ -1,23 +1,4 @@
 %h2 New Contact
-= simple_form_for @contact,  html: { class: 'form-horizontal' },
-  wrapper: :horizontal_form, as: 'contact', url: contacts_path do |f|
 
-  .form-inputs
-    =f.input :name, placeholder: 'Name of contact', class: 'form-control'
-    =f.input :phone, placeholder: 'Phone number', class: 'form-control'
-    =f.input :email, placeholder: 'user@domain.com', class: 'form-control'
+= render :partial => "contacts/form"
 
-  .form-actions
-    =f.button :submit, class: 'btn btn-default'
-
-    =link_to 'Back', contacts_path
--#
--#
--#%h2 Log in
--#= simple_form_for(@contact, as: contact, url: contacts_path do |f|
--#  .form-inputs
--#    = f.input :email, required: false, autofocus: true
--#    = f.input :password, required: false
--#    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
--#  .form-actions
--#    = f.button :submit, "Log in"

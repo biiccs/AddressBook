@@ -1,19 +1,30 @@
 .row
   .col-md-12
     %h1 Contacts
-    = link_to 'New', new_contact_path
-    %table.table.table-hover
-      %tr
-        %th Name
-        %th Phone
-        %th Email
-        %th
-      - @contacts.each do |contact|
-        %tr
-          %td= contact.name
-          %td= contact.phone
-          %td= contact.email
-          %td= link_to 'Show', contact_path(contact)
-          %td= link_to 'Edit', edit_contact_path(contact)
 
+    = render :partial => "contacts/new_contact_bnt"
 
+    .row
+      .col-md-12
+        %table.table.table-hover.table-bordered
+          %tr
+            %th Name
+            %th Phone
+            %th Email
+            %th Actions
+          - @contacts.each do |contact|
+            %tr
+              %td= contact.name
+              %td= contact.phone
+              %td= contact.email
+              %td
+                = link_to contact_path(contact), {:class => "btn btn-info btn-sm", :title => "Show"} do
+                  %span.glyphicon.glyphicon-eye-open{:aria-hidden => "true"}
+                &nbsp;
+                = link_to edit_contact_path(contact), {:class => "btn btn-info btn-sm", :title => "Edit"} do
+                  %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
+                &nbsp;
+                = link_to contact_path(contact), {:class => "btn btn-danger btn-sm", :title => "Remove", :method => 'delete'} do
+                  %span.glyphicon.glyphicon-trash{:aria-hidden => "true"}
+
+    = render :partial => "contacts/new_contact_bnt"

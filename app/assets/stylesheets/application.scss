@@ -1,3 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "contacts";
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+//
+//.row {
+//  margin-bottom: 15px;
+//}

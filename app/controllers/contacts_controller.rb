@@ -37,6 +37,13 @@ class ContactsController < ApplicationController
 
   end
 
+  def destroy
+    @contact = current_user.contacts.find(params[:id])
+    @contact.destroy
+
+    redirect_to contacts_path
+  end
+
   private
   def contact_params
     params.require(:contact).permit(:name, :phone, :email)

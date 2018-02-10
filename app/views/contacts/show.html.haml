@@ -1,11 +1,24 @@
-%p
-  %strong Name
-  #{@contact.name}
-%p
-  %strong Phone
-  #{@contact.phone}
-%p
-  %strong Email
-  #{@contact.email}
+.row
+  .col-md-12
+    .row
+      .col-md-6
+        %h1 Contact view
 
-=link_to 'Back', contacts_path
+    %p
+      %strong Name
+      #{@contact.name}
+    %p
+      %strong Phone
+      #{@contact.phone}
+    %p
+      %strong Email
+      #{@contact.email}
+
+
+    = link_to contacts_path, {:class => "btn btn-default", :title => "Back"} do
+      %span.glyphicon.glyphicon-menu-left{:aria-hidden => "true"}
+      Back
+    &nbsp;
+    = link_to edit_contact_path(@contact), {:class => "btn btn-info", :title => "Edit"} do
+      %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
+      Edit
