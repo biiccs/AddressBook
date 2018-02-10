@@ -1,25 +1,40 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   def show
-    @contact = Contact.find(params[:id])
+    @contact = current_user.contacts.find(params[:id])
   end
 
   def new
-    @contact = Contact.new
+    @contact = current_user.contacts.new()
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    @contact = current_user.contacts.new(contact_params)
 
     if @contact.save
       redirect_to @contact
     else
       render 'new'
     end
+  end
+
+  def edit
+    @contact = current_user.contacts.find(params[:id])
+  end
+
+  def update
+    @contact = current_user.contacts.find(params[:id])
+    if @contact.update(contact_params)
+      redirect_to(@contact)
+    else
+      render 'edit'
+    end
+
   end
 
   private

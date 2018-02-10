@@ -1,6 +1,7 @@
 .row
   .col-md-12
     %h1 Contacts
+    = link_to 'New', new_contact_path
     %table.table.table-hover
       %tr
         %th Name
@@ -13,5 +14,6 @@
           %td= contact.phone
           %td= contact.email
           %td= link_to 'Show', contact_path(contact)
+          %td= link_to 'Edit', edit_contact_path(contact)
 
 
