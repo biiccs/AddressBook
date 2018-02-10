@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    %h1 Contacts
+    %table.table.table-hover
+      %tr
+        %th Name
+        %th Phone
+        %th Email
+        %th
+      - @contacts.each do |contact|
+        %tr
+          %td= contact.name
+          %td= contact.phone
+          %td= contact.email
+          %td= link_to 'Show', contact_path(contact)
+
+
