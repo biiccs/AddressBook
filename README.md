@@ -11,6 +11,8 @@ After while run following (when mysql up and running):
 
     docker-compose exec app bin/rails db:migrate RAILS_ENV=development
 
+Navigate in browser http://0.0.0.0:3000;
+
 ## Without docker
 * Ruby version 2.5.0
 * System dependencies
