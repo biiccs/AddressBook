@@ -1,8 +1,4 @@
-FROM ruby
-
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN apt-get update -qq && apt-get install -y mysql-server mysql-client
-RUN apt-get update -qq && apt-get install -y imagemagick
+FROM biiccs/addressbook
 
 RUN mkdir /app
 WORKDIR /app

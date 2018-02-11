@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20180210141440) do
     t.string "name"
     t.string "phone"
     t.string "email"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

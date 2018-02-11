@@ -1,12 +1,20 @@
 %nav.navbar.navbar-default
-  .container-fluid
+  .container
     .navbar-header
-      %a.navbar-brand{:href => "/"} Address book
+      %button.navbar-toggle{"data-target" => "#header-navbar", "data-toggle" => "collapse", "aria-expanded" => "false", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
 
-      .navbar-right
+      %a.navbar-brand{:href => "/"} Address book
+    #header-navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          %b
-            = current_user.email
-          = link_to('Logout', destroy_user_session_path, method: :delete, :class => 'btn btn-default navbar-btn')
+          %li
+            = link_to edit_user_registration_path {} do
+              = current_user.email
+          %li
+            = link_to('Logout', destroy_user_session_path, method: :delete)
         - else
-          = link_to('Login', new_user_session_path, :class => 'btn btn-default navbar-btn')
+          %li= link_to('Login', new_user_session_path)

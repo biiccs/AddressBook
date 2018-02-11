@@ -1,10 +1,16 @@
+= f.error_notification
+
 .form-inputs
   =f.input :name, placeholder: 'Name of contact', class: 'form-control'
-  =f.input :phone, placeholder: 'Phone number', class: 'form-control'
-  =f.input :email, placeholder: 'user@domain.com', class: 'form-control'
-  =f.file_field :photo, class: 'form-control'
-  =f.hidden_field :photo_cache
+  =f.input :phone, as: :tel, placeholder: 'Phone number', class: 'form-control'
+  =f.input :email, as: :email, placeholder: 'user@domain.com', class: 'form-control'
+  =f.label :photo
+  .form-group
+    - if @contact.photo
+      %img{:src => @contact.photo.thumb_100, :class => 'img-circle'}
+    =f.file_field :photo, as: :file, class: 'form-control'
+    =f.hidden_field :photo_cache
 
 .form-actions
   =link_to 'Cancel', contacts_path, class: 'btn btn-default'
-  =f.button :submit, class: 'btn btn-success'
+  =f.button :submit, class: 'btn btn-success pull-right'

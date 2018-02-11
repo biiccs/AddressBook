@@ -1,3 +1,117 @@
-// Place all the styles related to the Contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap/_variables";
+
+.card {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.2);
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.2);
+
+  &:hover {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+    box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+
+    .actions {
+      display: inline-block;
+    }
+  }
+
+  margin: 15px 0;
+  padding: 10px;
+
+  min-height: 120px;
+
+  &.small-card {
+    .img {
+      float: left;
+      width: 50px;
+      height: 100px;
+      margin: 0 10px 0 0;
+    }
+
+    .content {
+      float: left;
+
+      b {
+        display: none;
+
+        @media (max-width: $screen-sm-max) {
+          display: block;
+        }
+      }
+    }
+
+    overflow: hidden;
+  }
+
+  .ellipsis {
+    width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    word-wrap: break-word;
+
+  }
+
+  .actions {
+    display: none;
+    right: 25px;
+    top: 25px;
+    position: absolute;
+    background: #fff;
+    padding: 0 5px;
+
+    @media (max-width: $screen-sm-max) {
+      right: 20px;
+      top: 10px;
+    }
+  }
+
+  .action {
+    margin-bottom: 5px;
+    &:hover {
+      a {
+        &.show {
+          @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+        }
+        &.edit {
+          @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+        }
+        &.remove {
+          @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+        }
+      }
+    }
+  }
+  &.big {
+    .content {
+      min-height: 230px;
+      padding: 15px;
+      span {
+        word-wrap: break-word;
+      }
+      @media (max-width: $screen-sm-max) {
+        min-height: 165px;
+      }
+    }
+
+    img {
+      padding: 15px 0;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      .img {
+        text-align: center;
+      }
+      img {
+        width: 120px;
+      }
+    }
+
+    .actions-line {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+}
+

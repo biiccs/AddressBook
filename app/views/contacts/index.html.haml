@@ -5,26 +5,42 @@
     = render :partial => "contacts/new_contact_bnt"
 
     .row
-      .col-md-12
-        %table.table.table-hover.table-bordered
-          %tr
-            %th Name
-            %th Phone
-            %th Email
-            %th Actions
-          - @contacts.each do |contact|
-            %tr
-              %td= contact.name
-              %td= contact.phone
-              %td= contact.email
-              %td
-                = link_to contact_path(contact), {:class => "btn btn-info btn-sm", :title => "Show"} do
+      - @contacts.each do |contact|
+        .col-md-3
+          .card.small-card
+            .img
+              %img{:src => contact.photo.thumb_50, :class => "img-circle"}
+
+            .content
+              - if contact.name?
+                %b
+                  Name
+                .text.ellipsis
+                  =contact.name
+                .clearfix
+              - if contact.email?
+                %b
+                  Email
+                .text.ellipsis
+                  =contact.email
+                .clearfix
+              - if contact.phone
+                .text.ellipsis
+                  %b
+                    Phone
+                  =contact.phone
+                .clearfix
+
+            .actions
+              .action
+                = link_to contact_path(contact), {:class => "btn btn-default btn-sm show", :title => "Show"} do
                   %span.glyphicon.glyphicon-eye-open{:aria-hidden => "true"}
-                &nbsp;
-                = link_to edit_contact_path(contact), {:class => "btn btn-info btn-sm", :title => "Edit"} do
+              .action
+                = link_to edit_contact_path(contact), {:class => "btn btn-default btn-sm edit", :title => "Edit"} do
                   %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
-                &nbsp;
-                = link_to contact_path(contact), {:class => "btn btn-danger btn-sm", :title => "Remove", :method => 'delete'} do
+              .action
+                = link_to contact_path(contact), {:class => "btn btn-default btn-sm remove", :title => "Remove", :method => 'delete'} do
                   %span.glyphicon.glyphicon-trash{:aria-hidden => "true"}
 
-    = render :partial => "contacts/new_contact_bnt"
+    - if !@contacts.blank?
+      = render :partial => "contacts/new_contact_bnt"

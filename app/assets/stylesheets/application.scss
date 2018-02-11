@@ -2,10 +2,9 @@
 @import "bootstrap";
 @import "contacts";
 
-.table > tbody > tr > td {
-  vertical-align: middle;
+.form-actions {
+  margin: 15px 0;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  background: #e7e7e7;
 }
-//
-//.row {
-//  margin-bottom: 15px;
-//}
