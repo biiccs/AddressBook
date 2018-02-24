@@ -1,9 +1,18 @@
 class ContactsController < ApplicationController
+
   before_action :authenticate_user!
-  before_action :set_contact, only: [:show, :edit, :update]
+  before_action :get_contact, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contacts = current_user.contacts
+    if params[:search]
+      if params[:commit]
+        redirect_to contacts_path(:search => params["search"], :page => params["page"])
+      else
+        @contacts = current_user.contacts.search(params[:search]).page params[:page]
+      end
+    else
+      @contacts = current_user.contacts.page params[:page]
+    end
   end
 
   def show
@@ -17,7 +26,7 @@ class ContactsController < ApplicationController
     @contact = current_user.contacts.new(contact_params)
 
     if @contact.save
-      redirect_to @contact
+      redirect_to_contact
     else
       render 'new'
     end
@@ -28,7 +37,7 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update(contact_params)
-      redirect_to(@contact)
+      redirect_to_contact
     else
       render 'edit'
     end
@@ -36,8 +45,14 @@ class ContactsController < ApplicationController
   end
 
   def destroy
-    @contact = current_user.contacts.find(params[:id])
     @contact.destroy
+
+    redirect_to contacts_path(:page => params["page"], :search => params["search"])
+  end
+
+  def layout
+    current_user.layout = params["layout"]
+    current_user.save
 
     redirect_to contacts_path
   end
@@ -45,10 +60,15 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :phone, :email, :photo, :photo_cache)
+    params.require(:contact).permit(:name, :phone, :email, :photo, :photo_cache, :query)
   end
 
-  def set_contact
+  def get_contact
     @contact = current_user.contacts.find(params[:id])
   end
+
+  def redirect_to_contact
+    redirect_to contact_path(@contact, :page => params["page"], :search => params["search"])
+  end
+
 end

@@ -1,6 +1,8 @@
+= content_for(:title, "Edit contact")
+
 .row
   .col-md-6.col-md-offset-3
     %h2 Edit Contact
     = simple_form_for @contact, html: { class: 'form-vertical' },
-      wrapper: :vertical_form, as: 'contact', url: contact_path do |form|
+      wrapper: :vertical_form, as: 'contact', url: contact_path(:page => params["page"], :search => params["search"]) do |form|
       = render :partial => "contacts/form", locals: { f: form }

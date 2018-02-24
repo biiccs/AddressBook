@@ -1,0 +1,15 @@
+.row.contacts-navigation
+  .col-md-8
+    = paginate @contacts
+
+  .col-md-4
+    = link_to new_contact_path, {:class => "btn btn-default pull-right", :title => "New contact"} do
+      New contact
+    .btn-group.pull-right
+      - is_active = (current_user.layout == 'list' ? ' active' : '')
+      = link_to layout_path('', :layout => 'list', :page => params["page"], :search => params["search"]), {:method => 'post', :class => "btn btn-default#{is_active}", :title => "List layout"} do
+        %span.glyphicon.glyphicon-th-list{:aria-hidden => "true"}
+
+      - is_active = (current_user.layout == 'tile' ? ' active' : '')
+      = link_to layout_path('', :layout => 'tile', :page => params["page"], :search => params["search"]), {:method => 'post', :class => "btn btn-default#{is_active}", :title => "Tile layout"} do
+        %span.glyphicon.glyphicon-th{:aria-hidden => "true"}

@@ -1,46 +1,73 @@
 .row
   .col-md-12
-    %h1 Contacts
+    -#%h1 Contacts
+    = render :partial => "contacts/contacts_navigation"
 
-    = render :partial => "contacts/new_contact_bnt"
+    - if current_user.layout == 'list'
+      %table.table.table-striped.list
+        %tr
+          %th
+            Name
+          %th
+            Email
+          %th
+            Phone
+          %th
+            Action
+        - @contacts.each do |contact|
+          %tr
+            %td
+              = contact.name
+            %td
+              = contact.email
+            %td
+              = contact.phone
+            %td.action
+              = link_to contact_path(contact, :page => params["page"]), {:class => "btn btn-default btn-sm view", :title => "Show"} do
+                %span.glyphicon.glyphicon-eye-open{:aria-hidden => "true"}
+              = link_to edit_contact_path(contact, :page => params["page"]), {:class => "btn btn-default btn-sm edit", :title => "Edit"} do
+                %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
+              = link_to contact_path(contact, :page => params["page"]), {:method => 'delete', :class => "btn btn-default btn-sm remove", :title => "Remove"} do
+                %span.glyphicon.glyphicon-remove{:aria-hidden => "true"}
+    - elsif current_user.layout == 'tile'
+      .row
+        - @contacts.each do |contact|
+          .col-md-3
+            .card.small-card
+              .img
+                %img{:src => contact.photo.thumb_50, :class => "img-circle"}
 
-    .row
-      - @contacts.each do |contact|
-        .col-md-3
-          .card.small-card
-            .img
-              %img{:src => contact.photo.thumb_50, :class => "img-circle"}
-
-            .content
-              - if contact.name?
-                %b
-                  Name
-                .text.ellipsis
-                  =contact.name
-                .clearfix
-              - if contact.email?
-                %b
-                  Email
-                .text.ellipsis
-                  =contact.email
-                .clearfix
-              - if contact.phone
-                .text.ellipsis
+              .content
+                - if contact.name?
                   %b
-                    Phone
-                  =contact.phone
-                .clearfix
+                    Name
+                  .text.ellipsis
+                    =contact.name
+                  .clearfix
+                - if contact.email?
+                  %b
+                    Email
+                  .text.ellipsis
+                    =contact.email
+                  .clearfix
+                - if contact.phone
+                  .text.ellipsis
+                    %b
+                      Phone
+                    =contact.phone
+                  .clearfix
 
-            .actions
-              .action
-                = link_to contact_path(contact), {:class => "btn btn-default btn-sm show", :title => "Show"} do
-                  %span.glyphicon.glyphicon-eye-open{:aria-hidden => "true"}
-              .action
-                = link_to edit_contact_path(contact), {:class => "btn btn-default btn-sm edit", :title => "Edit"} do
-                  %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
-              .action
-                = link_to contact_path(contact), {:class => "btn btn-default btn-sm remove", :title => "Remove", :method => 'delete'} do
-                  %span.glyphicon.glyphicon-trash{:aria-hidden => "true"}
+              .actions
+                .action
+                  = link_to contact_path(contact, :page => params["page"], :search => params["search"]), {:class => "btn btn-default btn-sm view", :title => "Show"} do
+                    %span.glyphicon.glyphicon-eye-open{:aria-hidden => "true"}
+                .action
+                  = link_to edit_contact_path(contact, :page => params["page"], :search => params["search"]), {:class => "btn btn-default btn-sm edit", :title => "Edit"} do
+                    %span.glyphicon.glyphicon-pencil{:aria-hidden => "true"}
+                .action
+                  = link_to contact_path(contact, :page => params["page"], :search => params["search"]), {:method => 'delete', :class => "btn btn-default btn-sm remove", :title => "Remove"} do
+                    %span.glyphicon.glyphicon-remove{:aria-hidden => "true"}
 
     - if !@contacts.blank?
-      = render :partial => "contacts/new_contact_bnt"
+      = render :partial => "contacts/contacts_navigation"
+

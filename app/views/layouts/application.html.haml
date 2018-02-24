@@ -2,11 +2,15 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title App
+    %title
+      Address book
+      - if content_for?(:title)
+        |
+        = yield(:title)
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render :partial => "layouts/navbar"
-    .container
+    .container.main
       = yield

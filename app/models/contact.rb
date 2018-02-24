@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+  paginates_per 24
+
   validates :name, presence: true,
             length: { minimum: 3, maximum: 255 }
 
@@ -12,4 +14,8 @@ class Contact < ApplicationRecord
             allow_blank: true
 
   mount_uploader :photo, PhotoUploader
+
+  def self.search(search)
+    where("name LIKE ? OR phone LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

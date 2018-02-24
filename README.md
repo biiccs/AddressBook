@@ -10,7 +10,12 @@ In source directory run following commands:
 After while run following (when mysql up and running):
 
     docker-compose exec app bin/rails db:migrate RAILS_ENV=development
+    docker-compose exec app bin/rails db:seed RAILS_ENV=development
 
+If any problems with app start, then run this command:
+
+    docker-compose build app    
+    
 Navigate in browser http://0.0.0.0:3000;
 
 ## Without docker

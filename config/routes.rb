@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :contacts
 
+  post 'layout' => "contacts#layout"
+
   root 'contacts#index'
 end

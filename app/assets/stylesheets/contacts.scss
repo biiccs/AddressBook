@@ -15,7 +15,7 @@
     }
   }
 
-  margin: 15px 0;
+  margin: 10px 0;
   padding: 10px;
 
   min-height: 120px;
@@ -55,7 +55,7 @@
   .actions {
     display: none;
     right: 25px;
-    top: 25px;
+    top: 20px;
     position: absolute;
     background: #fff;
     padding: 0 5px;
@@ -64,24 +64,11 @@
       right: 20px;
       top: 10px;
     }
-  }
-
-  .action {
-    margin-bottom: 5px;
-    &:hover {
-      a {
-        &.show {
-          @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-        }
-        &.edit {
-          @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-        }
-        &.remove {
-          @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-        }
-      }
+    .action {
+      margin-bottom: 5px;
     }
   }
+
   &.big {
     .content {
       min-height: 230px;
@@ -115,3 +102,59 @@
   }
 }
 
+.action {
+  a {
+    &:hover {
+      &.view {
+        @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+      }
+      &.edit {
+        @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+      }
+      &.remove {
+        @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 0;
+}
+
+nav {
+  margin-bottom: 0 !important;
+}
+
+.contacts-navigation {
+  margin: 20px 0 10px;
+  padding: 15px 0;
+  background: #f8f8f8;
+
+  .btn-group {
+    margin-right: 15px;
+  }
+
+  div {
+    height: 34px;
+  }
+}
+
+.list {
+  tr {
+    th:last-child {
+      width: 130px;
+    }
+
+    td {
+      vertical-align: middle !important;
+      &.action a {
+        margin: 2px;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 0;
+}

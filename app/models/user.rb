@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :contacts, dependent: :destroy
+
+  enum layout: { list: 0, tile: 1 }
 end
